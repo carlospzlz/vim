@@ -1,8 +1,3 @@
-"----------------------
-" Vim run commands file
-" Carlos Perez Lopez
-" ---------------------
-
 " Basic settings
 syntax on
 set ai
@@ -143,5 +138,3 @@ function NoColorColumn()
 	endif
 endfunction
 command Nocc call NoColorColumn()
-
-set t_kb=
