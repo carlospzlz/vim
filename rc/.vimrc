@@ -25,6 +25,9 @@ if $TERM == "screen"
 	set ttymouse=xterm2
 endif
 
+" No delay after <ESC>/<Ctrl>+[
+set timeoutlen=0
+
 " Status line showing full path
 set laststatus=2
 set statusline+=%F
