@@ -5,6 +5,10 @@ set mouse=a
 set tabstop=4
 set number
 
+" highlight is too burnt.
+" make it orangish.
+hi Search ctermbg=220
+
 " Mapping  to Backspace.
 " xterm is configured like that to let
 " tmux remap ^H without remapping
