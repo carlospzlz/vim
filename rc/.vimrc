@@ -4,10 +4,21 @@ set ai
 set mouse=a
 set tabstop=4
 set number
+set hlsearch
 
-" highlight is too burnt.
-" make it orangish.
-hi Search ctermbg=220
+" 256 color terminal
+" the default is term=$TERM
+set term=xterm-256color
+colo peachpuff
+" highlight to burnt.
+" make it orangish
+hi Search ctermbg=214
+" same with autocomplete
+" make it pinkish
+hi Pmenu ctermbg=162
+" and selection darker
+hi PmenuSel ctermbg=240
+
 
 " Mapping  to Backspace.
 " xterm is configured like that to let
