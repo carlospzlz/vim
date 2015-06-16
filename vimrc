@@ -24,7 +24,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " Loading Syntastic for checking using external checkers.
 Plugin 'scrooloose/syntastic'
-" Loading Solarized
+" Loading Greengoblin.
+Plugin 'carlospzlz/greengoblin'
+" Loading Solarized.
 Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 
@@ -97,7 +99,7 @@ set shiftwidth=4
 set term=xterm-256color
 set t_Co=256
 set background=dark
-colo solarized
+colo greengoblin
 
 " Mapping  to Backspace.
 " xterm is configured like that to let tmux remap ^H without remapping
