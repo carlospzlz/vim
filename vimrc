@@ -1,12 +1,34 @@
 "==============================================================================
-" PATHOGEN
+"                               CPL VIMRC
 "==============================================================================
-" Thanks to Tim Pope.
 
-" Loading bundles with Pathogen.
-call pathogen#infect()
-call pathogen#helptags()
-" We need to enable file-type based indentation so pathongen works properly.
+" No compatible with VI, let it be iMproved.
+" This has to be set at the beginning of the file because it changes other
+" options as side effects.
+set nocompatible
+
+
+"==============================================================================
+" VUNDLE
+"==============================================================================
+" Thanks to Gmarik organization.
+
+" This is required to use vundle.
+filetype off
+" Set the runtime path to include Vundle.
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" Vundle main
+call vundle#begin()
+" Vundle manages himself. Required.
+Plugin 'gmarik/Vundle.vim'
+" Loading Syntastic for checking using external checkers.
+Plugin 'scrooloose/syntastic'
+" Loading Solarized
+Plugin 'altercation/vim-colors-solarized'
+call vundle#end()
+
+" We need to enable file-type based indentation so vundle works properly.
 filetype plugin indent on
 
 
@@ -23,10 +45,13 @@ let g:syntastic_check_on_wq = 0
 
 " Syntastic checkers
 let g:syntastic_python_checkers = ["pylint", "pep8" ]
+" pylint ignored warnings are loaded in from .pylintrc.
+" pep8 ignored warnings are passed as arguments.
+let g:syntastic_python_pep8_args = "--ignore=W191"
 let g:syntastic_aggregate_errors = 0
 
 " Mappings to use syntastic with shortcuts
-nmap <F5> :SyntasticCheck pylint<CR>
+nmap <F5> :SyntasticCheck<CR>
 nmap <F6> :SyntasticCheck pep8<CR>
 nmap <F7> :SyntasticReset<CR>
 nmap <F8> :SyntasticToggleMode<CR>
@@ -59,6 +84,7 @@ set mouse=a
 set tabstop=4
 set number
 set hlsearch
+set nowrap
 
 " Default tab=4 
 set tabstop=4
@@ -69,7 +95,9 @@ set shiftwidth=4
 " Colors
 " 256 color terminal, the default is term=$TERM
 set term=xterm-256color
-colo greengoblin
+set t_Co=256
+set background=dark
+colo solarized
 
 " Mapping  to Backspace.
 " xterm is configured like that to let tmux remap ^H without remapping
@@ -83,9 +111,9 @@ endif
 
 " Configure mouse inside tmux ( drag splitter )
 " tmux => ttymouse = xterm2 which has extended mouse mode.
-if $TERM == "screen"
-	set ttymouse=xterm2
-endif
+"if $TERM == "screen"
+set ttymouse=xterm2
+"endif
 
 " No delay after <ESC>/<Ctrl>+[
 set timeoutlen=0
