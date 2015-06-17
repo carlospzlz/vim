@@ -1,5 +1,5 @@
 "==============================================================================
-"                               CPL VIMRC
+" CARLOSPZLZ VIMRC
 "==============================================================================
 
 " No compatible with VI, let it be iMproved.
@@ -46,15 +46,25 @@ let g:syntastic_check_no_open = 1
 let g:syntastic_check_on_wq = 0
 
 " Syntastic checkers
-let g:syntastic_python_checkers = ["pylint", "pep8" ]
+let g:syntastic_python_checkers = ["pylint"]
 " pylint ignored warnings are loaded in from .pylintrc.
 " pep8 ignored warnings are passed as arguments.
 let g:syntastic_python_pep8_args = "--ignore=W191"
 let g:syntastic_aggregate_errors = 0
 
+let g:python_checkers = ["pylint", "pep8"]
+let g:python_checker_index = 0
+" Cycling around python checkers
+function CyclePythonChecker()
+	let g:python_checker_index = (g:python_checker_index + 1) % len(g:python_checkers)
+	let g:syntastic_python_checkers = [g:python_checkers[g:python_checker_index]]
+	let g:syntastic_python_checkers
+endfunction
+command CyclePythonChecker call CyclePythonChecker()
+
 " Mappings to use syntastic with shortcuts
 nmap <F5> :SyntasticCheck<CR>
-nmap <F6> :SyntasticCheck pep8<CR>
+nmap <F6> :CyclePythonChecker<CR>
 nmap <F7> :SyntasticReset<CR>
 nmap <F8> :SyntasticToggleMode<CR>
 
