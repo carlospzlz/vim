@@ -28,6 +28,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'carlospzlz/greengoblin'
 " Loading Solarized.
 Plugin 'altercation/vim-colors-solarized'
+" Loading Tagbar
+Plugin 'majutsushi/Tagbar'
 call vundle#end()
 
 " We need to enable file-type based indentation so vundle works properly.
@@ -67,6 +69,12 @@ nmap <F5> :SyntasticCheck<CR>
 nmap <F6> :CyclePythonChecker<CR>
 nmap <F7> :SyntasticReset<CR>
 nmap <F8> :SyntasticToggleMode<CR>
+
+
+"==============================================================================
+" TAGBAR
+"==============================================================================
+nmap <F9> :TagbarToggle<CR>
 
 
 "==============================================================================

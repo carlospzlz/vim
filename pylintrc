@@ -1,0 +1,6 @@
+[FORMAT]
+indent-string=\t
+
+[MESSAGES CONTROL]
+# pylint 1.4.3 uses error/warning names.
+disable=bad-continuation, invalid-name, missing-docstring
