@@ -30,6 +30,10 @@ Plugin 'carlospzlz/greengoblin'
 Plugin 'altercation/vim-colors-solarized'
 " Loading Tagbar
 Plugin 'majutsushi/Tagbar'
+" Loading Airline
+Plugin 'bling/vim-airline'
+" Loading Fugitive
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 " We need to enable file-type based indentation so vundle works properly.
@@ -44,14 +48,14 @@ filetype plugin indent on
 " Syntastic settings
 let g:sytanstic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_no_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 " Syntastic checkers
 let g:syntastic_python_checkers = ["pylint"]
 " pylint ignored warnings are loaded in from .pylintrc.
 " pep8 ignored warnings are passed as arguments.
-let g:syntastic_python_pep8_args = "--ignore=W191"
+let g:syntastic_python_pep8_args = "--ignore=W191,E201,E202"
 let g:syntastic_aggregate_errors = 0
 
 let g:python_checkers = ["pylint", "pep8"]
@@ -87,19 +91,13 @@ au BufWinEnter * call check#Check()
 
 
 "==============================================================================
-" STATUSLINE
+" AIRLINE
 "==============================================================================
 
 set laststatus=2
-set statusline+=%F
-set statusline+=%=
-set statusline+=%l/%L
-set statusline+=\ %c
-set statusline+=\ %P
-" Syntastic info
-set statusline+=%#Error#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+let g:airline_powerline_fonts = 1
+let g:airline_section_c = airline#section#create(['%F'])
+let s:syntastic_section = '%#Error#%{SyntasticStatuslineFlag()}'
 
 
 "==============================================================================
@@ -115,10 +113,8 @@ set number
 set hlsearch
 set nowrap
 
-" Default tab=4 
+" Default tab=4
 set tabstop=4
-set softtabstop=4
-set noexpandtab
 set shiftwidth=4
 
 " Colors
@@ -164,8 +160,8 @@ endif
 " Show highlighting groups for current word
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
- 	if !exists("*synstack")
-	 	return
+	if !exists("*synstack")
+		return
 	endif
 	echo map(synstack(line("."), col(".")), 'synIDattr(v:val, "name")')
 endfunc
