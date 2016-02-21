@@ -86,8 +86,6 @@ nmap <F9> :TagbarToggle<CR>
 "==============================================================================
 command Check call check#Check()
 command Nocheck call check#NoCheck()
-au VimEnter * call check#Check()
-au BufWinEnter * call check#Check()
 
 
 "==============================================================================
