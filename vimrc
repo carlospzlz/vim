@@ -163,3 +163,10 @@ function! <SID>SynStack()
 	endif
 	echo map(synstack(line("."), col(".")), 'synIDattr(v:val, "name")')
 endfunc
+
+" Buffers
+" Hidding them rather than closing them.
+set hidden
+
+" Add newline in Normal mode.
+nmap <S-s> i<CR><Esc>
