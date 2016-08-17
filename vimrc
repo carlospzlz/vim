@@ -86,6 +86,8 @@ nmap <F9> :TagbarToggle<CR>
 "==============================================================================
 command Check call check#Check()
 command Nocheck call check#NoCheck()
+au VimEnter * call check#Check()
+au BufWinEnter * call check#Check()
 
 
 "==============================================================================
@@ -167,6 +169,9 @@ endfunc
 " Buffers
 " Hidding them rather than closing them.
 set hidden
+" Cycling through listed buffers
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
 
 " Add newline in Normal mode.
 nmap <S-s> i<CR><Esc>
