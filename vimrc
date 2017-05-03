@@ -55,17 +55,18 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 0
 
 " PYTHON
-let g:syntastic_python_checkers = ["pylint"]
+let g:python_checkers = ["pylint", "pep8"]
 " pylint ignored warnings are loaded in from .pylintrc.
 " pep8 ignored warnings are passed as arguments.
 let g:syntastic_python_pep8_args = "--ignore=W191,E201,E202"
-let g:python_checkers = ["pylint", "pep8"]
+let g:syntastic_python_checkers = ["pylint"]
 
 " CPP
-let g:syntastic_cpp_compiler = "gcc"
-let g:syntastic_cpp_cpplint_exec = "cpplint"
 let g:syntastic_cpp_check_header = 1
 let g:cpp_checkers = ["gcc", "cpplint"]
+let g:syntastic_cpp_compiler = "gcc"
+let g:syntastic_cpp_cpplint_exec = "cpplint"
+let g:syntastic_cpp_checkers = ["gcc"]
 
 " Cycling around checkers
 let g:checker_index = 0
