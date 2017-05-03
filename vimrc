@@ -52,25 +52,39 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 " Syntastic checkers
+let g:syntastic_aggregate_errors = 0
+
+" PYTHON
 let g:syntastic_python_checkers = ["pylint"]
 " pylint ignored warnings are loaded in from .pylintrc.
 " pep8 ignored warnings are passed as arguments.
 let g:syntastic_python_pep8_args = "--ignore=W191,E201,E202"
-let g:syntastic_aggregate_errors = 0
-
 let g:python_checkers = ["pylint", "pep8"]
-let g:python_checker_index = 0
-" Cycling around python checkers
-function CyclePythonChecker()
-	let g:python_checker_index = (g:python_checker_index + 1) % len(g:python_checkers)
-	let g:syntastic_python_checkers = [g:python_checkers[g:python_checker_index]]
-	let g:syntastic_python_checkers
+
+" CPP
+let g:syntastic_cpp_compiler = "gcc"
+let g:syntastic_cpp_cpplint_exec = "cpplint"
+let g:syntastic_cpp_check_header = 1
+let g:cpp_checkers = ["gcc", "cpplint"]
+
+" Cycling around checkers
+let g:checker_index = 0
+function CycleChecker()
+	if &filetype == "python"
+		let g:checker_index = (g:checker_index + 1) % len(g:python_checkers)
+		let g:syntastic_python_checkers = [g:python_checkers[g:checker_index]]
+		let g:syntastic_python_checkers
+	elseif &filetype == "cpp"
+		let g:checker_index = (g:checker_index + 1) % len(g:cpp_checkers)
+		let g:syntastic_cpp_checkers = [g:cpp_checkers[g:checker_index]]
+		let g:syntastic_cpp_checkers
+	endif
 endfunction
-command CyclePythonChecker call CyclePythonChecker()
+command CycleChecker call CycleChecker()
 
 " Mappings to use syntastic with shortcuts
 nmap <F5> :SyntasticCheck<CR>
-nmap <F6> :CyclePythonChecker<CR>
+nmap <F6> :CycleChecker<CR>
 nmap <F7> :SyntasticReset<CR>
 nmap <F8> :SyntasticToggleMode<CR>
 
