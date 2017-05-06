@@ -34,6 +34,8 @@ Plugin 'majutsushi/Tagbar'
 Plugin 'bling/vim-airline'
 " Loading Fugitive
 Plugin 'tpope/vim-fugitive'
+" Plugin YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 " We need to enable file-type based indentation so vundle works properly.
@@ -113,6 +115,17 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_section_c = airline#section#create(['%F'])
 let s:syntastic_section = '%#Error#%{SyntasticStatuslineFlag()}'
+
+
+"==============================================================================
+" YOU COMPLETE ME
+"==============================================================================
+
+" let g:loaded_youcompleteme = 1
+let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf"
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_show_diagnostics_ui = 0
 
 
 "==============================================================================
