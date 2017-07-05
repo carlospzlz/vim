@@ -24,6 +24,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " Loading Syntastic for checking using external checkers.
 Plugin 'scrooloose/syntastic'
+" Loading NERD tree
+Plugin 'scrooloose/nerdtree'
 " Loading Greengoblin.
 Plugin 'carlospzlz/greengoblin'
 " Loading Solarized.
@@ -34,7 +36,7 @@ Plugin 'majutsushi/Tagbar'
 Plugin 'bling/vim-airline'
 " Loading Fugitive
 Plugin 'tpope/vim-fugitive'
-" Plugin YouCompleteMe
+" Loading YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
@@ -65,10 +67,32 @@ let g:syntastic_python_checkers = ["pylint"]
 
 " CPP
 let g:syntastic_cpp_check_header = 1
-let g:cpp_checkers = ["gcc", "cpplint"]
+let g:cpp_checkers = ["gcc", "cpplint", "arc"]
 let g:syntastic_cpp_compiler = "gcc"
 let g:syntastic_cpp_cpplint_exec = "cpplint"
 let g:syntastic_cpp_checkers = ["gcc"]
+
+" Register arc linter
+if exists("g:loaded_syntastic_cpp_arc_checker")
+	finish
+endif
+let g:loaded_syntastic_cpp_arc_checker = 1
+
+function! SyntaxCheckers_cpp_arc_getLocList() dict
+	let makeprg = self.makeprgBuild(
+		\ {"args": "lint --output compiler --severity warning"})
+	let errorformat = "%f:%1:%m"
+
+	let errors = SyntasticMake(
+		\ {"makeprg": makeprg, "errorformat": errorformat})
+	for error in errors
+		let error.bufnr = bufnr("")
+	endfor
+	return errors
+endfunction
+
+"call g:SyntasticRegistry.CreateAndRegisterChecker(
+"	\ {"filetype": "cpp", "name": "arc"})
 
 " Cycling around checkers
 let g:checker_index = 0
@@ -95,7 +119,8 @@ nmap <F8> :SyntasticToggleMode<CR>
 "==============================================================================
 " TAGBAR
 "==============================================================================
-nmap <F9> :TagbarToggle<CR>
+nmap <F9> :NERDTreeToggle<CR>
+nmap <F10> :TagbarToggle<CR>
 
 
 "==============================================================================
@@ -121,12 +146,16 @@ let s:syntastic_section = '%#Error#%{SyntasticStatuslineFlag()}'
 " YOU COMPLETE ME
 "==============================================================================
 
-" let g:loaded_youcompleteme = 1
+let g:loaded_youcompleteme = 0
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_show_diagnostics_ui = 0
 
+"==============================================================================
+" CTAGS, JUMP AND ENJOY!
+"==============================================================================
+set tags=/workspace/carlos.perezlopez/dev/katana-3.0/tags
 
 "==============================================================================
 " OTHER SETTINGS
