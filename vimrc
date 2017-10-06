@@ -53,6 +53,9 @@ filetype plugin indent on
 "==============================================================================
 " Thanks to Martin Grenfell.
 
+" Manual Syntastic
+let b:syntastic_mode = "passive"
+
 " Syntastic settings
 let g:sytanstic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
