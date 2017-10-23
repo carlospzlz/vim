@@ -202,6 +202,8 @@ if $TERM == "xterm-256color"
 	" insert and command-line mode.
 	map! <C-?> <BS>
 endif
+" Vim 8 built from source doesn't remove from current line.
+set backspace=2
 
 " Configure mouse inside tmux ( drag splitter )
 " tmux => ttymouse = xterm2 which has extended mouse mode.
@@ -210,7 +212,7 @@ set ttymouse=xterm2
 "endif
 
 " No delay after <ESC>/<Ctrl>+[
-set timeoutlen=0
+set timeoutlen=250
 
 
 " Folding
