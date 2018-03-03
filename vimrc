@@ -2,6 +2,9 @@
 " CARLOSPZLZ VIMRC
 "==============================================================================
 
+" Now fish is my main shell, but `PluginInstall` doesn't work with it.
+set shell=/bin/bash
+
 " No compatible with VI, let it be iMproved.
 " This has to be set at the beginning of the file because it changes other
 " options as side effects.
@@ -153,16 +156,11 @@ let s:syntastic_section = '%#Error#%{SyntasticStatuslineFlag()}'
 " YOU COMPLETE ME
 "==============================================================================
 
-"let g:loaded_youcompleteme = 0
+let g:loaded_youcompleteme = 0
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_show_diagnostics_ui = 0
-
-"==============================================================================
-" CTAGS, JUMP AND ENJOY!
-"==============================================================================
-set tags=/workspace/carlos.perezlopez/dev/katana-3.0/tags
 
 "==============================================================================
 "GIGUTTER. REAL TIME GIT DIFF
