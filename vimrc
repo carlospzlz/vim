@@ -2,6 +2,9 @@
 " CARLOSPZLZ VIMRC
 "==============================================================================
 
+" Now fish is my main shell, but `PluginInstall` doesn't work with it.
+set shell=/bin/bash
+
 " No compatible with VI, let it be iMproved.
 " This has to be set at the beginning of the file because it changes other
 " options as side effects.
