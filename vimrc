@@ -25,26 +25,32 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Vundle manages himself. Required.
 Plugin 'gmarik/Vundle.vim'
-" Loading Syntastic for checking using external checkers.
+" Pull Syntastic for checking using external checkers.
 Plugin 'scrooloose/syntastic'
-" Loading NERD tree
+" Pull NERD tree.
 Plugin 'scrooloose/nerdtree'
-" Loading Greengoblin.
+" Pull Greengoblin.
 Plugin 'carlospzlz/greengoblin'
-" Loading Solarized.
+" Pull Solarized.
 Plugin 'altercation/vim-colors-solarized'
-" Loading Tagbar
+" Pull Tagbar.
 Plugin 'majutsushi/Tagbar'
-" Loading Airline
+" Pull Airline.
 Plugin 'bling/vim-airline'
-" Loading Fugitive
+" Pull Fugitive.
 Plugin 'tpope/vim-fugitive'
-" Loading YouCompleteMe
+" Pull YouCompleteMe.
 Plugin 'Valloric/YouCompleteMe'
-" Loading dirvish path navigator
+" Pull dirvish path navigator.
 Plugin 'justinmk/vim-dirvish'
-" Loading Gitgutter
+" Pull Gitgutter.
 Plugin 'airblade/vim-gitgutter'
+" Pull Easy Motion.
+Plugin 'easymotion/vim-easymotion'
+" Pull Ctrlp.
+Plugin 'ctrlpvim/ctrlp.vim'
+" Pull games: Tetris, sokoban and Sudoku!
+Plugin 'jmanoel7/vim-games'
 call vundle#end()
 
 " We need to enable file-type based indentation so vundle works properly.
@@ -156,7 +162,7 @@ let s:syntastic_section = '%#Error#%{SyntasticStatuslineFlag()}'
 " YOU COMPLETE ME
 "==============================================================================
 
-let g:loaded_youcompleteme = 0
+let g:loaded_youcompleteme = 1
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -168,10 +174,30 @@ let g:ycm_show_diagnostics_ui = 0
 set tags=./tags;
 
 "==============================================================================
-"GIGUTTER. REAL TIME GIT DIFF
+" GIGUTTER. REAL TIME GIT DIFF
 "==============================================================================
 set updatetime=250
-let g:gitgutter_diff_base = 'master'
+" let g:gitgutter_diff_base = 'master'
+
+"==============================================================================
+" EASY MOTION
+"==============================================================================
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 "==============================================================================
 " OTHER SETTINGS
