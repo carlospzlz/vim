@@ -168,16 +168,19 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_show_diagnostics_ui = 0
 
+
 "==============================================================================
 " CTAGS, JUMP AND ENJOY!
 "==============================================================================
 set tags=./tags;
+
 
 "==============================================================================
 " GIGUTTER. REAL TIME GIT DIFF
 "==============================================================================
 set updatetime=250
 " let g:gitgutter_diff_base = 'master'
+
 
 "==============================================================================
 " EASY MOTION
@@ -199,11 +202,13 @@ let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
+
 "==============================================================================
 " CONTROL-P
 "==============================================================================
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_cmd = 'CtrlP'
+
 
 "==============================================================================
 " OTHER SETTINGS
@@ -212,7 +217,7 @@ let g:ctrlp_cmd = 'CtrlP'
 " Basic settings
 syntax on
 set ai
-set mouse=a
+"set mouse=a
 set tabstop=4
 set number
 set hlsearch
@@ -224,7 +229,7 @@ set shiftwidth=4
 
 " Colors
 " 256 color terminal, the default is term=$TERM
-set term=xterm-256color
+" set term=xterm-256color
 set t_Co=256
 set background=dark
 colo greengoblin
@@ -244,7 +249,7 @@ set backspace=2
 " Configure mouse inside tmux ( drag splitter )
 " tmux => ttymouse = xterm2 which has extended mouse mode.
 "if $TERM == "screen"
-set ttymouse=xterm2
+" set ttymouse=xterm2
 "endif
 
 " No delay after <ESC>/<Ctrl>+[
