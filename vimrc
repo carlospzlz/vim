@@ -161,8 +161,10 @@ let s:syntastic_section = '%#Error#%{SyntasticStatuslineFlag()}'
 "==============================================================================
 " YOU COMPLETE ME
 "==============================================================================
+" Python provider configuration.
+let g:python3_host_prog = "/usr/bin/python3"
 
-let g:loaded_youcompleteme = 1
+" let g:loaded_youcompleteme = 1
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -179,7 +181,7 @@ set tags=./tags;
 " GIGUTTER. REAL TIME GIT DIFF
 "==============================================================================
 set updatetime=250
-" let g:gitgutter_diff_base = 'master'
+" let g:gitgutter_diff_base = '3.1_BRANCH'
 
 
 "==============================================================================
@@ -217,7 +219,7 @@ let g:ctrlp_cmd = 'CtrlP'
 " Basic settings
 syntax on
 set ai
-"set mouse=a
+set mouse=a
 set tabstop=4
 set number
 set hlsearch
