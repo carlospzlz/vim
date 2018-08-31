@@ -233,7 +233,7 @@ set shiftwidth=4
 
 " Colors
 " 256 color terminal, the default is term=$TERM
-" set term=xterm-256color
+"set term=xterm-256color
 set t_Co=256
 set background=dark
 colo greengoblin
@@ -253,7 +253,7 @@ set backspace=2
 " Configure mouse inside tmux ( drag splitter )
 " tmux => ttymouse = xterm2 which has extended mouse mode.
 "if $TERM == "screen"
-" set ttymouse=xterm2
+"set ttymouse=xterm2
 "endif
 
 " No delay after <ESC>/<Ctrl>+[
