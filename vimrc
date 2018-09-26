@@ -292,3 +292,11 @@ nnoremap <C-p> :bprevious<CR>
 
 " Add newline in Normal mode.
 nmap <S-s> i<CR><Esc>
+
+" Clipboard
+" Section to deal with the X selection buffers.
+" PRIMARY -> middle mouse copy/paste
+" SECONDARY -> ?
+" CLIPBOARD -> Ctrl-C/Ctrl-V
+" Let's make \y to copy to primary in Visual mode.
+vnoremap <Leader>y "*y
