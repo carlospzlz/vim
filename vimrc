@@ -166,7 +166,7 @@ let g:python3_host_prog = "/usr/bin/python3"
 
 " You can disable YCM by defining this variable.
 "let g:loaded_youcompleteme = 1
-let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf"
+let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_show_diagnostics_ui = 0
