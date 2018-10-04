@@ -164,11 +164,14 @@ let s:syntastic_section = '%#Error#%{SyntasticStatuslineFlag()}'
 " Python provider configuration.
 let g:python3_host_prog = "/usr/bin/python3"
 
-" let g:loaded_youcompleteme = 1
+" You can disable YCM by defining this variable.
+"let g:loaded_youcompleteme = 1
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_key_list_select_completion = ['<C-j>', '<Up>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Down>']
 
 " NOTE: Enabling ycm prevents git-gutter to update when editing a line, it
 " will update when you press enter.
