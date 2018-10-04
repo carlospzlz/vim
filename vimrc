@@ -170,8 +170,8 @@ let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_show_diagnostics_ui = 0
-let g:ycm_key_list_select_completion = ['<TAB>', '<Up>', '<C-j>']
-let g:ycm_key_list_previous_completion = ['<Down>', '<C-k>']
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<C-j>']
+let g:ycm_key_list_previous_completion = ['<Up>', '<C-k>']
 
 " NOTE: Enabling ycm prevents git-gutter to update when editing a line, it
 " will update when you press enter.
