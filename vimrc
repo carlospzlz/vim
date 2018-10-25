@@ -163,6 +163,7 @@ let s:syntastic_section = '%#Error#%{SyntasticStatuslineFlag()}'
 "==============================================================================
 " Python provider configuration.
 let g:python3_host_prog = "/usr/bin/python3"
+let g:yum_python_binary_path = "/usr/bin/python3"
 
 " You can disable YCM by defining this variable.
 "let g:loaded_youcompleteme = 1
