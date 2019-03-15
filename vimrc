@@ -26,7 +26,7 @@ call vundle#begin()
 " Vundle manages himself. Required.
 Plugin 'gmarik/Vundle.vim'
 " Pull Syntastic for checking using external checkers.
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 " Pull NERD tree.
 Plugin 'scrooloose/nerdtree'
 " Pull Greengoblin.
@@ -187,7 +187,7 @@ set tags=./tags;
 "==============================================================================
 set updatetime=250
 "let g:gitgutter_diff_base = '3.0_BRANCH'
-let g:gitgutter_max_signs = 1000
+let g:gitgutter_max_signs = 9999
 
 
 "==============================================================================
@@ -303,3 +303,6 @@ nmap <S-s> i<CR><Esc>
 " CLIPBOARD -> Ctrl-C/Ctrl-V
 " Let's make \y to copy to primary in Visual mode.
 vnoremap <Leader>y "*y
+
+" Show invisible characters as good old vim
+set listchars=tab:>\ ,trail:-,eol:$

@@ -7,6 +7,8 @@ def FlagsForFile(filename, **kwargs):
             '-std=c++11',
             '-x', 'c++',
             '-isystem', '/usr/include/c++/8.2.1',
+            '-isystem', '/usr/local/include',
+            '-isystem', '/usr/include',
             '-I', 'include',
-            '-I', '/usr/include'],
+            ]
     }
