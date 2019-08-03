@@ -162,7 +162,7 @@ let s:syntastic_section = '%#Error#%{SyntasticStatuslineFlag()}'
 " YOU COMPLETE ME
 "==============================================================================
 " Python provider configuration.
-let g:python3_host_prog = "/usr/bin/python3"
+let g:ycm_server_python_interpreter = "/usr/bin/python3"
 
 " You can disable YCM by defining this variable.
 "let g:loaded_youcompleteme = 1
@@ -186,7 +186,7 @@ set tags=./tags;
 " GIGUTTER. REAL TIME GIT DIFF
 "==============================================================================
 set updatetime=250
-let g:gitgutter_diff_base = '3.0_BRANCH'
+"let g:gitgutter_diff_base = '3.0_BRANCH'
 let g:gitgutter_max_signs = 1000
 
 
