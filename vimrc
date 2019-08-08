@@ -51,6 +51,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Pull games: Tetris, sokoban and Sudoku!
 Plugin 'jmanoel7/vim-games'
+" Pull vim-clang-format
+Plugin 'rhysd/vim-clang-format'
 call vundle#end()
 
 " We need to enable file-type based indentation so vundle works properly.
@@ -192,9 +194,9 @@ set tags=./tags;
 " GIGUTTER. REAL TIME GIT DIFF
 "==============================================================================
 set updatetime=250
-let g:gitgutter_diff_base = '3.0_BRANCH'
-"let g:gitgutter_diff_base = 'TP_378724_PortClient'
-"let g:gitgutter_diff_base = '3.2_CMAKE_BRANCH'
+"let g:gitgutter_diff_base = '3.0_BRANCH'
+"let g:gitgutter_diff_base = 'master'
+"let g:gitgutter_diff_base = '3.2MonitorFrontBuffer_BRANCH'
 let g:gitgutter_max_signs = 9999
 
 
@@ -224,6 +226,14 @@ map <Leader>k <Plug>(easymotion-k)
 "==============================================================================
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_cmd = 'CtrlP'
+
+
+"==============================================================================
+" CONTROL-P
+"==============================================================================
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 
 
 "==============================================================================
