@@ -10,5 +10,6 @@ def FlagsForFile(filename, **kwargs):
             '-isystem', '/usr/local/include',
             '-isystem', '/usr/include',
             '-I', 'include',
+            '-I', '/home/infcpl00/clones/USD/install/include',
             ]
     }
