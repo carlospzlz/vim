@@ -51,6 +51,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Pull games: Tetris, sokoban and Sudoku!
 Plugin 'jmanoel7/vim-games'
+" Pull vim-clang-format
+Plugin 'rhysd/vim-clang-format'
 call vundle#end()
 
 " We need to enable file-type based indentation so vundle works properly.
@@ -216,6 +218,14 @@ map <Leader>k <Plug>(easymotion-k)
 "==============================================================================
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_cmd = 'CtrlP'
+
+
+"==============================================================================
+" CLANG-FORMAT
+"==============================================================================
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 
 
 "==============================================================================
