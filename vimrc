@@ -318,4 +318,4 @@ vnoremap <Leader>y "*y
 set listchars=tab:>\ ,trail:-,eol:$
 
 " Add matching closing curly braces.
-inoremap { {<CR>}<Esc>ko
+inoremap {{ {<CR>}<Esc>ko
