@@ -324,3 +324,6 @@ vnoremap <Leader>y "*y
 
 " Show invisible characters as good old vim
 set listchars=tab:>\ ,trail:-,eol:$
+
+" Add matching closing curly braces.
+inoremap { {<CR>}<Esc>ko
