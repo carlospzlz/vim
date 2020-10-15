@@ -53,8 +53,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jmanoel7/vim-games'
 " Pull vim-clang-format
 Plugin 'rhysd/vim-clang-format'
-" Pull Yet Another Python Formatter
-Plugin 'google/yapf'
 call vundle#end()
 
 " We need to enable file-type based indentation so vundle works properly.
@@ -233,8 +231,8 @@ autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 "==============================================================================
 " YAPF
 "==============================================================================
-map <C-Y> :call yapf#YAPF()<cr>
-imap <C-Y> <c-o>:call yapf#YAPF()<cr>
+" This uses yapf from the system
+autocmd FileType python nnoremap <buffer><leader>y :0,$!yapf<CR>
 
 
 "==============================================================================
