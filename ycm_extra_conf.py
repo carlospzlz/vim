@@ -6,7 +6,7 @@ def FlagsForFile(filename, **kwargs):
             '-Werror',
             '-std=c++11',
             '-x', 'c++',
-            '-isystem', '/usr/include/c++/10.1.0',
+            '-isystem', '/usr/include/c++/10.2.0',
             '-isystem', '/usr/local/include',
             '-isystem', '/usr/include',
             '-isystem', '/usr/include/opencv4',
