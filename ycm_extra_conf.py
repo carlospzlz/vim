@@ -14,5 +14,6 @@ def FlagsForFile(filename, **kwargs):
             '-I', '/usr/local/USD/include/',
             '-I', '/home/infcpl00/foundry/Katana3.5v1.010022b/plugin_apis/include',
             '-I', '/home/infcpl00/dev/hydra-selection/include',
+            '-I', '/opt/ros/noetic/include',
             ]
     }
