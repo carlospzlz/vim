@@ -188,7 +188,7 @@ set tags=./tags;
 " GIGUTTER. REAL TIME GIT DIFF
 "==============================================================================
 set updatetime=250
-"let g:gitgutter_diff_base = '3.0_BRANCH'
+"let g:gitgutter_diff_base = 'master'
 let g:gitgutter_max_signs = 9999
 
 
