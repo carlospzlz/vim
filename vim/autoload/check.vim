@@ -16,16 +16,12 @@ function check#Check()
 		endif
 	endif
 	call matchadd( "Error", s:trailingSpaces, -1, 9)
-	call matchadd( "Error", s:wrongEqual, -1, 10 )
-	call matchadd( "Error", s:wrongComma, -1, 11)
 	let w:check = 1
 endfunction
 
 function check#NoCheck()
 	if w:check
 		call matchdelete( 9 )
-		call matchdelete( 10 )
-		call matchdelete( 11 )
 		let w:check = 0
 	endif
 endfunction
